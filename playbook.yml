@@ -51,7 +51,6 @@
     - { role: localtime, tags: ['localtime'], when: "localtime is defined" }
     - { role: bluetooth, tags: ['bluetooth'], when: "bluetooth is defined" }
 #   - { role: hostsctl, tags: ['hostsctl'], when: "hostsctl is defined" }
-    - { role: kiwix, tags: ['kiwix'] }
   vars_prompt:
     - name: user_password
       prompt: "Enter desired user password"
