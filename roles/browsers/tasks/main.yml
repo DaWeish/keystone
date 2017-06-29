@@ -50,20 +50,6 @@
     - aur
     - chromium
 
-- name: Install tor-browser-en
-  aur: name=tor-browser-en user={{ user.name }} skip_pgp=yes
-  tags:
-    - tor-browser
-    - aur
-
-- name: Jail tor-browser-en
-  file: src=/usr/bin/firejail
-        dest=/usr/local/bin/tor-browser-en
-        state=link
-  tags:
-    - tor-browser
-    - firejail
-
 - name: Push rofi browser chooser
   template: src=browser.sh.j2 dest=/usr/local/bin/browser mode=0755
   tags:
