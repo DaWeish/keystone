@@ -46,7 +46,6 @@
     - { role: borg, tags: ['borg'] }
     - { role: tarsnap, tags: ['tarsnap'] }
     - { role: sound, tags: ['sound'] }
-    - { role: postgresql, tags: ['postgresql'] }
     - { role: calibre, tags: ['calibre'] }
     - { role: aws, tags: ['aws'] }
     - { role: parcimonie, tags: ['parcimonie'], when: "tor is defined" }
