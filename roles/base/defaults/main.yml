@@ -1,0 +1,33 @@
+---
+# Default Configuration variables for Base role
+user_uid: 1000
+user_shell: /bin/bash
+user_log_dir: log
+
+base_packages:
+    - base-devel
+    - tmux
+    - git
+    - rsync
+    - glances
+    - coreutils
+    - moreutils
+    - reflector
+    - bc
+    - ranger
+    - strace
+    - lsof
+    - sysstat
+    - arch-wiki-lite
+    - arch-wiki-docs
+    - python-keyring
+    - python-secretstorage
+    - pv
+    - jq
+    - python-docs
+    - python2-docs
+    - units
+    - vim
+
+journal:
+  max_size: 500M

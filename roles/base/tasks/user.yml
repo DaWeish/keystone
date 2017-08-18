@@ -1,22 +1,70 @@
 ---
 - name: Create user group
-  group: name={{ user.group }} state=present
+  group: 
+    name: "{{ user_group }}"
+    state: present
   tags:
+    - user
+
+- name: Check if the user exists
+  getent:
+    database: passwd
+    key: "{{ user_name }}"
+    fail_key: False
+  register: user_exists
+  tags:
+    - user
+
+- name: Debug user exists value
+  debug:
+    var: user_exists
+
+# We only want to ask for a password when we first create the user, otherwise it is annoying
+- name: Prompt for password if user does not exist
+  pause:
+    prompt: "Enter a password for the user {{ user_name }}"
+  when: user_exists.msg is defined and user_exists.msg == "One or more supplied key could not be found in the database."
+  register: user_password
+  tags: 
     - user
 
 - name: Create user and assign to group
-  user: name={{ user.name }} group={{ user.group }} password={{ user_password|password_hash('sha512') }} shell={{ user.shell }} update_password=on_create uid={{ user.uid }}
+  user: 
+    password: "{{ user_password.user_input|password_hash('sha512') }}"
+    name: "{{ user_name }}"
+    group: "{{ user_group }}"
+    shell: "{{ user_shell }}"
+    update_password: on_create
+    uid: "{{ user_uid }}"
+  when: user_password.user_input is defined
   tags:
     - user
 
+- name: Update user and groups
+  user:
+    name: "{{ user_name }}"
+    group: "{{ user_group }}"
+    shell: "{{ user_shell }}"
+    uid: "{{ user_uid }}"
+    update_password: on_create
+  when: user_password.user_input is not defined
+  tags:
+    - use
+
 - name: Create user log dir
-  file: path=/home/{{ user.name }}/{{ user.log_dir }} state=directory owner={{ user.name }} group={{ user.group }}
-  when: user.log_dir is defined
+  file: 
+    path: /home/{{ user_name }}/{{ user_log_dir }}
+    state: directory
+    owner: "{{ user_name }}"
+    group: "{{ user_group }}"
+  when: user_log_dir is defined
   tags:
     - user
 
 - name: Push logrotate config for user logs
-  template: src=logrotate.j2 dest=/etc/logrotate.d/user
-  when: user.log_dir is defined
+  template:
+    src: logrotate.j2
+    dest: /etc/logrotate.d/{{ user_name }}
+  when: user_log_dir is defined
   tags:
     - user

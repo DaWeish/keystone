@@ -1,0 +1,6 @@
+---
+hostname: "shallowblue"
+
+user:
+    name: cwalsh
+    group: cwalsh

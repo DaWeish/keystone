@@ -1,12 +1,6 @@
-user:
-    name: pigmonkey
-    uid: 1000
-    group: pigmonkey
-    shell: /usr/bin/zsh
-    email:  peter@havenaut.net
-    log_dir: log
-
-hostname: nous
+---
+user_name: cwalsh
+user_group: cwalsh
 
 dotfiles:
     url: git@github.com:pigmonkey/dotfiles.git
@@ -51,35 +45,6 @@ editors:
 video_drivers:
     - libva-intel-driver
 
-base_packages:
-    - base-devel
-    - tmux
-    - git
-    - rsync
-    - glances
-    - coreutils
-    - moreutils
-    - reflector
-    - bc
-    - ranger
-    - strace
-    - lsof
-    - sysstat
-    - arch-wiki-lite
-    - arch-wiki-docs
-    - python-keyring
-    - python-secretstorage
-    - fabric
-    - tig
-    - ruby
-    - pv
-    - minicom
-    - jq
-    - python-docs
-    - python2-docs
-    - screen
-    - units
-
 filesystem_packages:
     - dosfstools
     - hfsprogs
@@ -93,9 +58,6 @@ browser_choices:
     - tor-browser-en
     - play
     - qcode
-
-passwordless_sudo:
-    - /usr/bin/openvpn*
 
 tarsnapper:
   deltas: 1h 1d 7d 30d 365d
@@ -175,9 +137,6 @@ cryptshot:
           interval: 6
         - level: monthly
           interval: 3
-
-journal:
-    max_size: 500M
 
 udisks:
     auto_mount: False

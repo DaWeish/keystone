@@ -1,6 +1,10 @@
 # {{ ansible_managed }}
 
-/home/{{ user.name }}/{{ user.log_dir }}/*.log {
+/home/{{ user_name }}/{{ user_log_dir }}/*.log {
     missingok
+    rotate 4
+    weekly
+    nocompress
+    copytruncate
     noolddir
 }
