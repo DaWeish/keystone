@@ -2,6 +2,8 @@
 user_name: cwalsh
 user_group: cwalsh
 
+hostname: shallowblue
+
 dotfiles:
     url: git@github.com:pigmonkey/dotfiles.git
     destination: projects/dotfiles

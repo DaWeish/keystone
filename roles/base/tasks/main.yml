@@ -4,6 +4,7 @@
 
 - name: Refresh pacman mirrors
   pacman: update_cache=yes
+  changed_when: False
 
 - name: Set the hostname
   hostname: name={{ hostname }}

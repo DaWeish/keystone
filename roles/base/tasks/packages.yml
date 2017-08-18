@@ -34,7 +34,7 @@
 - name: Push pacman cache cleanup timer
   copy:
     src: paccache.timer
-    dest: etc/systemd/system/paccache.timer
+    dest: /etc/systemd/system/paccache.timer
   notify:
     - reload systemd config
     - restart paccache
