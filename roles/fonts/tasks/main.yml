@@ -1,12 +1,18 @@
 ---
 - name: Install freetyp2
-  pacman: name=freetype2 state=present
+  pacman:
+    name: freetype2
+    state: present
 
 - name: Install cairo
-  pacman: name=cairo state=present
+  pacman:
+    name: cairo
+    state: present
 
 - name: Install fontconfig
-  pacman: name=fontconfig state=present
+  pacman:
+    name: fontconfig
+    state: present
 
 - name: Enable LCD filter
   file: src=/etc/fonts/conf.avail/11-lcdfilter-default.conf
@@ -39,20 +45,3 @@
       - tex-gyre-fonts
       - ttf-droid
       - ttf-ubuntu-font-family
-
-- name: Install AUR fonts
-  aur: name={{ item }} user={{ user.name }}
-  with_items:
-      - ttf-signika
-      - ttf-quintessential
-      - ttf-oswald
-      - ttf-opensans
-      - ttf-merriweather-sans
-      - ttf-merriweather
-      - ttf-impallari-cantora
-      - ttf-carlito
-      - ttf-caladea
-      - ttf-courier-prime
-      - ttf-heuristica
-  tags:
-    - aur

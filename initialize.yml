@@ -4,3 +4,4 @@
   roles:
     - { role: base, tags: ['base'] }
     - { role: network, tags: ['network'] }
+    - { role: fonts, tags: ['fonts'] }
