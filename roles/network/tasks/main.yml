@@ -9,10 +9,10 @@
       - gnome-keyring
       - dhclient
 
-- name: Copy the NetworkManager config to specify dhclient
+- name: Push the NetworkManager config to specify dhclient
   template:
-    src: NetworkManager.conf.j2
-    dest: /etc/NetworkManager/NetworkManager.conf
+    src: 50-set_dhclient.conf.j2
+    dest: /etc/NetworkManager/conf.d/50-set_dhclient.conf
     mode: 644
 
 - name: Stop/Disable dhcpcd if it was being used
