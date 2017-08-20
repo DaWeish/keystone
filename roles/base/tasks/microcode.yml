@@ -3,6 +3,6 @@
   pacman:
     name: intel-ucode
     state: present
-  when: 'GenunineIntel' in ansible_processor
+  when: "'GenunineIntel' in ansible_processor"
   notify:
     - rebuild grub
