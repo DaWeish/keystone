@@ -15,3 +15,4 @@
 - include: sudo.yml
 - include: packages.yml
 - include: journal.yml
+- include: ntp.yml
