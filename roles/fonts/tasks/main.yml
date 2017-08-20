@@ -49,5 +49,5 @@
 
 - name: Set the console font
   template:
-    src: vconsole.conf
+    src: vconsole.conf.j2
     dest: /etc/vconsole.conf
