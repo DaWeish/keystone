@@ -1,0 +1,8 @@
+---
+- name: Install intel microcode
+  pacman:
+    name: intel-ucode
+    state: present
+  when: 'GenunineIntel' in ansible_processor
+  notify:
+    - rebuild grub

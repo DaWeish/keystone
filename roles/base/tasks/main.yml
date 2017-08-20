@@ -16,3 +16,4 @@
 - include: packages.yml
 - include: journal.yml
 - include: ntp.yml
+- include: microcode.yml
