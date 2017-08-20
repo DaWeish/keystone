@@ -30,7 +30,7 @@ base_packages:
     - python2-docs
     - units
     - vim
-    - nvim
+    - neovim
 
 journal:
   max_size: 500M
