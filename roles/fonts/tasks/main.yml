@@ -48,6 +48,6 @@
       - ttf-roboto
 
 - name: Set the console font
-  file:
+  copy:
     src: vconsole.conf
     dest: /etc/vconsole.conf
