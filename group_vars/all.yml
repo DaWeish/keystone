@@ -37,19 +37,11 @@ mail:
     sync_boot_delay: 2min
     sync_on: trusted
 
-network:
-    spoof_mac: True
-    trusted_uuid:
-
-editors:
-    - gvim
-
 video_drivers:
     - libva-intel-driver
 
 filesystem_packages:
     - dosfstools
-    - hfsprogs
     - ntfs-3g
     - exfat-utils
 
@@ -139,10 +131,6 @@ cryptshot:
           interval: 6
         - level: monthly
           interval: 3
-
-udisks:
-    auto_mount: False
-    shared_mount: True
 
 hostsctl:
     url: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
