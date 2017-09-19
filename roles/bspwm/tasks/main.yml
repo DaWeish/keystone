@@ -1,0 +1,5 @@
+---
+- name: Install bspwm
+  pacman:
+    name: bspwm
+    state: present

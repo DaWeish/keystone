@@ -1,4 +1,10 @@
-# Spark
+# Keystone
+Installs my current arch setup (laptop).
+
+Installation is designed to be a usuable base system. Specific user configuration
+files (dotfiles) can be used to override the base setup.
+
+# (Spark)
 
 Spark is an [Ansible][1] playbook meant to provision a personal machine running
 [Arch Linux][2]. It is intended to run locally on a fresh Arch install (ie,
