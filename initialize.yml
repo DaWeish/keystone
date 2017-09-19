@@ -8,3 +8,4 @@
     - { role: sound, tags: ['sound'] }
     - { role: filesystems, tags: ['filesystems'] }
     - { role: udisks, tags: ['udisks'] }
+    - { role: dotfiles, tags: ['dotfiles'] }
