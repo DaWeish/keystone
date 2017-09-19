@@ -4,8 +4,8 @@ user_group: cwalsh
 
 hostname: shallowblue
 
-dotfiles_url: 
-dotfiles_destination:
+dotfiles_url: https://github.com/DaWeish/dotfiles.git
+dotfiles_destination: dotfiles
 
 aur:
     dir: aur
