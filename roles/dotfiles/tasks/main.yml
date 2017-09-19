@@ -6,15 +6,15 @@
 
 - name: Clone user dotfiles
   git:
-    repo: "{{ dotfiles.url }}"
-    dest: /home/{{ user.name }}/{{ dotfiles.destination }}
+    repo: "{{ dotfiles_url }}"
+    dest: /home/{{ user_name }}/{{ dotfiles_destination }}
     update: no
-  when: dotfiles is defined
+  when: dotfiles_url is defined and dotfiles_destination is defined
   become: yes
-  become_user: "{{ user.name }}"
+  become_user: "{{ user_name }}"
 
-- name: Install user dotfiles
-  command: rcup -d /home/{{ user.name }}/{{ dotfiles.destination }} {{ dotfiles.rcup_flags }}
-  when: dotfiles is defined
-  become: yes
-  become_user: "{{ user.name }}"
+  #- name: Install user dotfiles
+  #  command: rcup -d /home/{{ user.name }}/{{ dotfiles.destination }} {{ dotfiles.rcup_flags }}
+  #  when: dotfiles is defined
+  #  become: yes
+  #  become_user: "{{ user.name }}"
