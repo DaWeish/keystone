@@ -12,9 +12,3 @@
   when: dotfiles_url is defined and dotfiles_destination is defined
   become: yes
   become_user: "{{ user_name }}"
-
-  #- name: Install user dotfiles
-  #  command: rcup -d /home/{{ user.name }}/{{ dotfiles.destination }} {{ dotfiles.rcup_flags }}
-  #  when: dotfiles is defined
-  #  become: yes
-  #  become_user: "{{ user.name }}"
