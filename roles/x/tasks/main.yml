@@ -36,7 +36,6 @@
     groups: video
     append: yes
 
-- include: sxhkd.yml
 - include: unclutter.yml
   #- include: autorandr.yml
   #- include: srandrd.yml

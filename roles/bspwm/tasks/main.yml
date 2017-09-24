@@ -3,3 +3,35 @@
   pacman:
     name: bspwm
     state: present
+  tags:
+    - bspwm
+
+- name: Install sxhkd
+  pacman:
+    name: sxhkd
+    state: present
+  tags:
+    - sxhkd
+
+- name: Install rxvt with Unicode
+  pacman:
+    name: urxvt
+    state: present
+  tags:
+    - urxvt
+
+- name: Push bspwm example config
+  copy:
+    src: bspwmrc
+    dest: /home/{{ user_name }}/.config/bspwm/bspwmrc
+  tags:
+    - bspwm
+    - example
+
+- name: Push sxhkd example config
+  copy:
+    src: sxhkdrc
+    dest: /home/{{ user_name }}/.config/sxhkd/sxhkdrc
+  tags:
+    - sxhkd
+    - example
