@@ -20,12 +20,32 @@
   tags:
     - urxvt
 
+- name: Create bspwm config directory
+  file:
+    path: /home/{{ user_name }}/.config/bspwm
+    state: directory
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+  tags:
+    - bspwm
+    - example
+
 - name: Push bspwm example config
   copy:
     src: bspwmrc
     dest: /home/{{ user_name }}/.config/bspwm/bspwmrc
   tags:
     - bspwm
+    - example
+
+- name: Create sxhkd config directory
+  file:
+    path: /home/{{ user_name }}/.config/sxhkd
+    state: directory
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+  tags:
+    - sxhkd
     - example
 
 - name: Push sxhkd example config
