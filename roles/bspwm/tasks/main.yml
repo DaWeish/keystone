@@ -15,7 +15,7 @@
 
 - name: Install rxvt with Unicode
   pacman:
-    name: urxvt
+    name: rxvt-unicode
     state: present
   tags:
     - urxvt
