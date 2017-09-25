@@ -32,4 +32,4 @@
     - sxhkd
 
 - include: example.yml
-  when: bspwm_example is defined and bspwm_example is True
+  when: bspwm_example is defined and bspwm_example

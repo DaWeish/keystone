@@ -44,5 +44,5 @@
 - include: xdg.yml
 
 - include: example.yml
-  when: x_example is defined and x_example is True
+  when: x_example is defined and x_example
 

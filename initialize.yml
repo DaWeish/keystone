@@ -8,5 +8,5 @@
     - { role: sound, tags: ['sound'] }
     - { role: filesystems, tags: ['filesystems'] }
     - { role: udisks, tags: ['udisks'] }
-    - { role: x, tags: ['x'] }
+    - { role: bspwm, tags: ['bspwm'] }
     - { role: dotfiles, tags: ['dotfiles'] }
