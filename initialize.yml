@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
-  become: true
+  become: True
   roles:
     - { role: base, tags: ['base'] }
     - { role: network, tags: ['network'] }
@@ -8,5 +8,5 @@
     - { role: sound, tags: ['sound'] }
     - { role: filesystems, tags: ['filesystems'] }
     - { role: udisks, tags: ['udisks'] }
+    - { role: x, tags: ['x'] }
     - { role: dotfiles, tags: ['dotfiles'] }
-    - { role: bspwm, tags: ['bspwm'] }

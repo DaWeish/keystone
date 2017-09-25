@@ -1,3 +1,3 @@
 ---
 dependencies:
-  - { role: x }
+  - { role: x, x_example: False}
