@@ -39,6 +39,7 @@
     path: /home/{{ user_name }}/.xinitrc
     regexp: 'twm &'
     line: 'sxhkd &'
+    state: present
   tags:
     - example
 
@@ -46,6 +47,7 @@
   lineinfile:
     path: /home/{{ user_name }}/.xinitrc
     regexp: '^(xclock|xterm) .*&$'
+    state: absent
   tags:
     - example
 
@@ -54,6 +56,7 @@
     path: /home/{{ user_name }}/.xinitrc
     regexp: 'exec xterm .*'
     line: 'exec bspwm'
+    state: present
   tags:
     - example
 
