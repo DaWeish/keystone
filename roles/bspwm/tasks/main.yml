@@ -13,13 +13,6 @@
   tags:
     - sxhkd
 
-- name: Install rxvt with Unicode
-  pacman:
-    name: rxvt-unicode
-    state: present
-  tags:
-    - urxvt
-
 - name: Create bspwm config directory
   file:
     path: /home/{{ user_name }}/.config/bspwm
@@ -28,15 +21,6 @@
     group: "{{ user_name }}"
   tags:
     - bspwm
-    - example
-
-- name: Push bspwm example config
-  copy:
-    src: bspwmrc
-    dest: /home/{{ user_name }}/.config/bspwm/bspwmrc
-  tags:
-    - bspwm
-    - example
 
 - name: Create sxhkd config directory
   file:
@@ -46,12 +30,6 @@
     group: "{{ user_name }}"
   tags:
     - sxhkd
-    - example
 
-- name: Push sxhkd example config
-  copy:
-    src: sxhkdrc
-    dest: /home/{{ user_name }}/.config/sxhkd/sxhkdrc
-  tags:
-    - sxhkd
-    - example
+- include: example.yml
+  when: bspwm_example is defined and bspwm_example is True
