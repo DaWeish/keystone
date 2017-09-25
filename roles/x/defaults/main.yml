@@ -1,3 +1,5 @@
 ---
 video_drivers:
   - libva-intel-driver
+
+x_example: True

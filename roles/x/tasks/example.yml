@@ -1,0 +1,23 @@
+---
+- name: Create default xinitrc
+  copy:
+    src: /etc/X11/xinit/xinitrc
+    dest: /home/{{ user_name }}/.xinitrc
+    remote_src: True
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+  tags:
+    - x
+    - example
+
+- name: Install xorg example packages
+  pacman:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - xorg-twm
+    - xorg-xclock
+    - xterm
+  tags:
+    - x
+    - example
