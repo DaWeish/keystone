@@ -1,11 +1,20 @@
 ---
-- name: Install rxvt with Unicode
+- name: Install xterm
   pacman:
-    name: rxvt-unicode
+    name: xterm
     state: present
   tags:
-    - urxvt
+    - xterm
     - bspwm
+    - example
+
+- name: Install dmenu
+  pacman:
+    name: dmenu
+    state: present
+  tags:
+    - bspwm
+    - dmenu
     - example
 
 - name: Push bspwm example config
