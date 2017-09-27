@@ -52,12 +52,11 @@
   tags:
     - example
 
-- name: Change twm to sxhkd
+- name: Remove twm
   lineinfile:
     path: /home/{{ user_name }}/.xinitrc
     regexp: 'twm &'
-    line: 'sxhkd &'
-    state: present
+    state: absent
   tags:
     - example
 
