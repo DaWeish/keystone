@@ -5,3 +5,10 @@
     state: present
   tags:
     - termite
+
+- name: Install xterm
+  pacman:
+    name: xterm
+    state: present
+  tags:
+    - xterm

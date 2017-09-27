@@ -36,6 +36,14 @@
     groups: video
     append: yes
 
+- name: Install some archlinux wallpapers
+  pacman:
+    name: archlinux-wallpaper
+    state: present
+  tags:
+    - x
+    - optional
+
 - include: unclutter.yml
   #- include: autorandr.yml
   #- include: srandrd.yml

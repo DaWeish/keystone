@@ -2,4 +2,8 @@
 video_drivers:
   - libva-intel-driver
 
+terminal_emulators:
+  - xterm
+  - termite
+
 x_example: True
