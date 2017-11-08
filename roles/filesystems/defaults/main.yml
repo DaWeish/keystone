@@ -1,0 +1,5 @@
+---
+filesystem_packages:
+    - dosfstools
+    - ntfs-3g
+    - exfat-utils

@@ -1,6 +1,6 @@
 ---
 video_drivers:
-  - libva-intel-driver
+        #- libva-intel-driver
 
 terminal_emulators:
   - xterm
