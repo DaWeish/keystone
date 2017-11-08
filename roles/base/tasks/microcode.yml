@@ -4,5 +4,3 @@
     name: intel-ucode
     state: present
   when: "'GenunineIntel' in ansible_processor"
-  notify:
-    - rebuild grub
