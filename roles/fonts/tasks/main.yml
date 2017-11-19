@@ -53,8 +53,3 @@
       - ttf-droid
       - ttf-ubuntu-font-family
       - ttf-roboto
-
-- name: Set the console font
-  template:
-    src: vconsole.conf.j2
-    dest: /etc/vconsole.conf

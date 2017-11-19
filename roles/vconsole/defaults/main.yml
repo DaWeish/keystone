@@ -1,0 +1,4 @@
+---
+vconsole_font_size: 32
+vconsole_font: ter-1{{ vconsole_font_size }}n
+vconsole_font_package: terminus-font

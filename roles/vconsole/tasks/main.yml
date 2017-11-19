@@ -1,0 +1,42 @@
+---
+- name: Create custom keymap directory
+  file:
+    path: /usr/local/share/kbd/keymaps
+    state: directory
+  tags:
+    - keymap
+    - vconsole
+
+- name: Push caps lock override keymap
+  copy:
+    src: override_capslock.map
+    dest: /usr/local/share/kbd/keymaps/override_capslock.map
+  tags:
+    - keymap
+    - vconsole
+
+- name: Set the keymap to be loaded
+  lineinfile:
+    path: /etc/vconsole.conf
+    line: 'KEYMAP=/usr/local/share/kbd/keymaps/override_capslock.map'
+    state: present
+    create: True
+  tags:
+    - keymap
+    - vconsole
+
+- name: Install needed font
+  pacman:
+    name: '{{ vconsole_font_package }}'
+    state: present
+  tags:
+    - vconsole
+
+- name: Set the vconsole font
+  lineinfile:
+    path: /etc/vconsole.conf
+    line: 'FONT={{ vconsole_font }}'
+    state: present
+    create: True
+  tags:
+    - vconsole
